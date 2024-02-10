@@ -8,7 +8,7 @@
     "dist/*"
   ],
   "scripts": {
-    "lint": "npm run lint:eslint && npm run lint:prettier",
+    "lint": "yarn lint:eslint && yarn lint:prettier",
     "lint:eslint": "eslint --fix --ignore-path .gitignore src",
     "lint:prettier": "pretty-quick",
     "commit": "git cz",
