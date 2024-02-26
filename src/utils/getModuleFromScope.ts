@@ -15,9 +15,13 @@ export const getModuleFromScope = ({
       await __webpack_init_sharing__('default')
       const container: Container = window[scope]
       if (!container) return null
-      await container.init(__webpack_share_scope__.default)
+      console.log('$$$$$$$$$$ container found', __webpack_share_scopes__)
+      await container.init(__webpack_share_scopes__.default)
+      console.log('$$$$$$$$$$ container initialized')
       const factory = await window[scope].get(module)
+      console.log('$$$$$$$$ factory', factory)
       const Module = factory()
+      console.log('$$$$$$$$$$$$ module found', Module)
       window[scope].initialized = true
       return Module
     } catch (error) {

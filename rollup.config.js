@@ -6,6 +6,7 @@ import clear from 'rollup-plugin-clear'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import terser from '@rollup/plugin-terser'
 import typescript from '@rollup/plugin-typescript'
+import dts from 'rollup-plugin-dts'
 
 const pkg = require('./package.json')
 const year = new Date().getFullYear()
@@ -63,5 +64,15 @@ export default [
         ],
       },
     ],
+  },
+  {
+    input: `src/index.ts`,
+    output: [
+      {
+        file: 'dist/dynamic-module-federation.d.ts',
+        format: 'es',
+      },
+    ],
+    plugins: [dts()],
   },
 ]
