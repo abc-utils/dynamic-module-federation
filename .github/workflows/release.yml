@@ -4,9 +4,8 @@
 name: release
 
 on:
-  pull_request:
-    types: [closed]
-    branches: [master]
+  release:
+    types: [published]
 
 jobs:
   build:
