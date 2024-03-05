@@ -4,8 +4,11 @@
 name: release
 
 on:
-  release:
-    types: [published]
+  push:
+    branches:
+      - master
+      - alpha
+      - beta
 
 jobs:
   build:
