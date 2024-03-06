@@ -13,7 +13,6 @@
     "lint": "yarn lint:eslint && yarn lint:prettier",
     "lint:eslint": "eslint --fix src/** --ignore-path .gitignore",
     "lint:prettier": "pretty-quick",
-    "commit": "git cz",
     "test": "echo \"no tests found\" && exit 0",
     "build": "rollup -c --environment NODE_ENV:production"
   },
