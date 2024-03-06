@@ -1,6 +1,6 @@
 {
   "name": "dynamic-module-federation",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Tool for importing module federated components/apps at runtime",
   "main": "dist/umd/index.js",
   "module": "dist/esm/index.js",
