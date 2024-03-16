@@ -1,6 +1,6 @@
 # dynamic-module-federation
 
-This package provides hooks as well as React compatible components to load and render Module-federated micro-apps in dynamic way.
+This package provides React compatible component as well as hook to load and render Module-federated micro-apps in dynamic way.
 
 - It will dynamically import the repote applications and will only import the part of the remote application that is required.
 - It automatically handles the scenario where multiple instances of remote app is consumed inside the host application.
@@ -10,7 +10,7 @@ Configure the remote app with module federation and serve it.
 In the host application, use the module federation plugin inside webpack but to import the remote entries dynamically don't mention those as remotes.
 
 ```javascript
-// webpack.js of host
+// webpack.config.js of host
 
 new ModuleFederationPlugin({
   name: "hostApp",
@@ -36,5 +36,29 @@ import ModFedRemoteLoader from 'dynamic-module-federation'
   props={/* Optional. To add any optional parametrs in the component */ }
 >
 ```
+It also allows to load modules from remote app through a hook. Use the hook useFederatedComponent for this purpose.
 
+```javascript
+import { useFederatedComponent } from 'dynamic-module-federation'
+
+const RemoteComponent = () => {
+  const {error, Component} = useFederatedComponent({
+    remoteUrl: 'http://localhost:3002/remoteEntry.js',
+    scope: 'remoteAppSecond',
+    module: './Button'
+  })
+  if (error) {
+    // errorLog(error)
+  }
+  return (
+    <>
+      {Component && (
+        <Suspense fallback={<>Loading ... </>}>
+          <Component />
+        </Suspense>
+      )}
+    </>
+  )
+}
+```
 You can view a demonstration of utilizing this application at https://github.com/abc-utils/dynamic-module-federation-example .

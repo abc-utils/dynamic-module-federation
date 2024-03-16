@@ -14,7 +14,8 @@
     "lint:eslint": "eslint --fix src/** --ignore-path .gitignore",
     "lint:prettier": "pretty-quick",
     "test": "echo \"no tests found\" && exit 0",
-    "build": "rollup -c --environment NODE_ENV:production"
+    "build": "rollup -c --environment NODE_ENV:production",
+    "commit": "cz"
   },
   "keywords": [
     "React",
@@ -47,6 +48,7 @@
     "@semantic-release/release-notes-generator": "^12.1.0",
     "@types/react": "^18.0.26",
     "commitlint": "^18.6.0",
+    "commitizen": "^4.3.0",
     "console-browserify": "1.2.0",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
