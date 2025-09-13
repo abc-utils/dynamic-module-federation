@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect } from 'react'
-import {useFederatedComponent} from '../hooks/useFederatedComponent'
+import { useFederatedComponent } from '../hooks/useFederatedComponent'
 import { ModFedRemoteLoaderProps } from '../types'
 
 /**
@@ -22,6 +22,7 @@ const ModFedRemoteLoader = ({
   loadingComponent,
   remoteEntryLoadedCallback,
   errorLogCallback = () => {},
+  fallbackComponent,
 }: ModFedRemoteLoaderProps) => {
   const { error, Component } = useFederatedComponent({
     remoteUrl,
@@ -36,6 +37,7 @@ const ModFedRemoteLoader = ({
       errorLogCallback({ errorMessage })
     }
   }, [error])
+  if (error) return fallbackComponent
   if (!Component) return ''
   return (
     <Suspense fallback={loadingComponent}>
