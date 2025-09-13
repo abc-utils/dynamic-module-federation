@@ -1,3 +1,11 @@
+# [0.4.0](https://github.com/abc-utils/dynamic-module-federation/compare/v0.3.1...v0.4.0) (2025-09-13)
+
+
+### Features
+
+* fallback component added for error scenario ([9ec5be4](https://github.com/abc-utils/dynamic-module-federation/commit/9ec5be443c7304bc9d37af01049bc8f6ec0e94d3))
+* fallback component added for error scenario ([66cccd9](https://github.com/abc-utils/dynamic-module-federation/commit/66cccd995d57793dc696bc5886b32f060b60c9b5))
+
 ## [0.3.1](https://github.com/abc-utils/dynamic-module-federation/compare/v0.3.0...v0.3.1) (2025-07-25)
 
 
