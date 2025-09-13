@@ -48,4 +48,5 @@ export type ModFedRemoteLoaderProps = {
     loadingComponent?: ReactNode
     remoteEntryLoadedCallback?: () => void
     props?: Record<string, unknown>
+    fallbackComponent?: ReactNode
 }
