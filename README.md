@@ -33,6 +33,7 @@ import ModFedRemoteLoader from 'dynamic-module-federation'
   loadingComponent={/* Optional. To show a loading screen while the remote module is getting loaded */}
   remoteEntryLoadedCallback={/* Optional. If you want to run some functions after the remote Entry file is loaded. The logging utilities can be added here. */}
   errorLogCallback={/* Optional. If we want to run any function in case of error while loading the remote module. The logging utilities can be added here */}
+  fallbackComponent={/* Optional. To show a fallback component when loading of the remote app fails */}
   props={/* Optional. To add any optional parameters in the component */ }
 >
 ```
